@@ -28,46 +28,54 @@
           <form id="order">
             <label for="size">Choose Size:</label>
             <select class="form-control" id="size">
-              <option value="1">8"</option>
-              <option value="2">12"</option>
-              <option value="3">14"</option>
-              <option value="4">16"</option>
+              <option value="8">8" $8</option>
+              <option value="12">12" $12</option>
+              <option value="14">14" $14</option>
+              <option value="16">16" $16</option>
             </select>
 
             <label for="cheese">Choose Cheese:</label>
             <div class="checkbox">
-              <label><input type="checkbox" value="chedar">Chedar</label>
+              <label><input type="checkbox"
+                name="cheese" value="chedar">Chedar + $3</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" value="mozzarella">mozzarella</label>
+              <label><input type="checkbox" name="cheese" value="mozzarella">mozzarella + $3</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" value="fata">Feta</label>
+              <label><input type="checkbox" name="cheese" value="feta">Feta + $3</label>
             </div>
 
             <label for="toppings">Choose toppings:</label>
             <div class="checkbox">
-              <label><input type="checkbox" value="pineapple">Pineapple</label>
+              <label><input type="checkbox"
+                name="toppings" value="pineapple">Pineapple + $1</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" value="jalopano">Jalopano</label>
+              <label><input type="checkbox" name="toppings" value="jalopano">Jalopano + $1</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" value="ham">Ham</label>
+              <label><input type="checkbox" name="toppings" value="ham">Ham + $1</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" value="pepperoni">Pepperoni</label>
+              <label><input type="checkbox" name="toppings" value="pepperoni">Pepperoni + $1</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" value="beef">Beef</label>
+              <label><input type="checkbox" name="toppings" value="beef">Beef + $1</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" value="onion">Onion</label>
+              <label><input type="checkbox" name="toppings" value="onion">Onion + $1</label>
             </div>
 
             <button type="submit" class="btn bg-danger">Place Order</button>
           </form>
         </div>
+
+        <div id="orderDisplay" class="col-md-4">
+          <p>Hello. You just ordered one <span id="sizeInput"></span> inches pizza, with <span id="cheeseInput"></span> and <span id="toppingInput"></span>.Your total cost will be: <span id="totalCost"></span></p>
+        </div>
+
+
 
 
       </div>
