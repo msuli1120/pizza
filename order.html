@@ -48,7 +48,7 @@
 
             <label for="toppings">Choose toppings:</label>
             <div class="checkbox">
-              <label><input type="checkbox"
+              <label><input id="checkbox" type="checkbox"
                 name="toppings" value="pineapple">Pineapple + $1</label>
             </div>
             <div class="checkbox">
@@ -67,14 +67,49 @@
               <label><input type="checkbox" name="toppings" value="onion">Onion + $1</label>
             </div>
 
-            <button type="submit" class="btn bg-danger">Place Order</button>
+            <button id="placeOrder" type="submit" class="btn bg-danger">Place Order</button>
           </form>
         </div>
 
         <div id="orderDisplay" class="col-md-4">
-          <p>Hello. You just ordered one <span id="sizeInput"></span> inches pizza, with <span id="cheeseInput"></span> and <span id="toppingInput"></span>.Your total cost will be: <span id="totalCost"></span></p>
+          <p>Hello. You just ordered one <span id="sizeInput"></span> inches pizza, with <span id="cheeseInput"></span> and <span id="toppingInput"> </span>. Your total cost will be $<span id="totalCost"></span>.</p>
+
+          <div id="confirm">
+            <span class="btn bg-success">Confirm</span>
+          </div>
+
+          <div id="delivery">
+            <h4>Choose Delivery Option</h4>
+            <div class="radio">
+              <label><input type="radio" name="delivery" value="1">Yes</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="delivery" value="0">No</label>
+            </div>
+            <span id="option" class="btn bg-info">Submit</span>
+          </div>
         </div>
 
+        <div class="col-md-3" id="deliveryInfo">
+          <form id="forDelivery">
+            <label for="name">Enter Your Full Name:</label>
+            <input type="text" class="form-control" id="fullName">
+            <label for="street">Enter Street Name:</label>
+            <input type="text" class="form-control" id="street">
+            <label for="city">Enter City Name:</label>
+            <input type="text" class="form-control" id="city">
+            <label for="street">Enter State:</label>
+            <input type="text" class="form-control" id="state">
+            <label for="zipcode">Enter Zip Code:</label>
+            <input type="number" class="form-control" id="zipCode" min="10000" max="99999">
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+
+        <div id="deliveryShow" class="col-md-3">
+
+        </div>
 
 
 

@@ -12,10 +12,10 @@ _A simple application that takes online order where users can choose one or more
 
 1. _collect size info from user after submit_
 2. _collect cheese and toppings after submit _
-3. _delivery option after submit_
-4. _display delivery info input and collect the info_
-5. _calculate total price_
-6. _display final info(total price, delivery info and eta)_
+3. _total price and display the info_
+4. _delivery option after submit_
+5. _address input_
+6. _display delivery info_
 
 ## Setup
 
