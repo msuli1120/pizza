@@ -71,10 +71,14 @@ $(function(){
       var state = $("#state").val();
       var zc = $("#zipCode").val();
 
-      var user = new Address (nameInput, streetInput, cityInput, state, zc);
+      if ((nameInput === "")||(streetInput=== "")||(cityInput=== "" )||(state=== "" )||(zc === "")){
+          alert("Please complete the form!");
+      } else {
+        var user = new Address (nameInput, streetInput, cityInput, state, zc);
 
-      $("#deliveryShow").append('<p>Hello, ' + user.name + '. Your order will be delivered at ' + user.street + ' ' + user.city + ' ' + user.zipcode + ', ' + user.state + '.');
+        $("#deliveryShow").append('<p>Hello, ' + user.name + '. Your order will be delivered at ' + user.street + ' ' + user.city + ' ' + user.zipcode + ', ' + user.state + '.');
 
-      $("form#forDelivery").hide();
+        $("form#forDelivery").hide();
+      };
     });
 });
