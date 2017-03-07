@@ -1,15 +1,16 @@
-function Pizza (size){
+function Pizza (size,cheese,topping){
   this.size = size;
-  this.topping = [];
-  this.cheese = [];
+  this.cheese = cheese;
+  this.topping = topping;
 };
 
-Pizza.prototype.sizePrice = function (){
-  var sp = eval($("#size").val());
-  return sp;
-};
+var cheeseInput = [];
+var toppingsInput = [];
 
-var order = new Pizza();
+Pizza.prototype.subtotal = function () {
+  var subtotal = this.size + this.cheese.length*3 + this.topping.length*1;
+  return subtotal;
+};
 
 function Address(name, street, city, state, zipcode) {
   this.name = name;
@@ -17,6 +18,13 @@ function Address(name, street, city, state, zipcode) {
   this.city = city;
   this.state = state;
   this.zipcode = zipcode;
+};
+
+function reset () {
+  cheeseInput = [];
+  toppingsInput = [];
+  sizeInput = "";
+ $("#size").val("0");
 };
 
 function uncheck () {
@@ -28,23 +36,26 @@ function uncheck () {
 $(function(){
   $("form#order").submit(function(event){
     event.preventDefault();
-    $("#orderDisplay").show();
-    order.sizePrice();
+
+    var size = parseInt($("#size").val());
 
     $('input:checkbox[name="cheese"]:checked').each(function () {
-      order.cheese.push($(this).val());
+      cheeseInput.push($(this).val());
     });
 
     $('input:checkbox[name="toppings"]:checked').each(function () {
-      order.topping.push($(this).val());
+      toppingsInput.push($(this).val());
     });
 
-    var total = order.sizePrice() + order.cheese.length*3 + order.topping.length*1;
+    var order = new Pizza (size, cheeseInput, toppingsInput);
 
-    $("#sizeInput").text(order.sizePrice());
-    $("#cheeseInput").text(order.cheese);
-    $("#toppingInput").text(order.topping);
-    $("#totalCost").text(total);
+    $("#orderDisplay").show();
+
+    $("#sizeInput").text(order.size);
+    $("#cheeseInput").text(order.cheese.join(", "));
+    $("#toppingInput").text(order.topping.join(", "));
+    $("#totalCost").text(order.subtotal());
+    reset();
     $("#confirm").show();
   });
 
