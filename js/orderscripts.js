@@ -27,8 +27,8 @@ function uncheck () {
 
 $(function(){
   $("form#order").submit(function(event){
-    $("#orderDisplay").show();
     event.preventDefault();
+    $("#orderDisplay").show();
     order.sizePrice();
 
     $('input:checkbox[name="cheese"]:checked').each(function () {

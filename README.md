@@ -10,12 +10,22 @@ _A simple application that takes online order where users can choose one or more
 
 ## Specs
 
-1. _collect size info from user after submit_
-2. _collect cheese and toppings after submit _
-3. _total price and display the info_
-4. _delivery option after submit_
-5. _address input_
-6. _display delivery info_
+1. _Program has button to select pizza size_
+  * _input: select 12" pizza_
+  * _output: saved in a variable for later use_
+2. _program allows user to select one topping on pizza_
+  * _input: select one topping_
+  * _output: saves topping in array for later use_
+3. _program allows user to select multiple toppings on pizza_
+  * _input: selects multiple toppings_
+  * _output: saves in array for later use_
+4. _program calculates subtotal and displays the info back to the user_
+  * _input: pizza size and toppings_
+  * _output: subtotal/total price_
+5. _program has a delivery option available after submit_
+ * _input: delivery_
+ * _output: asks for address_
+6. _program displays final delivery info_
 
 ## Setup
 
